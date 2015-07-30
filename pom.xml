@@ -12,17 +12,34 @@
     </properties>
     <repositories>
         <repository>
-            <id>bungeecord-repo</id>
-            <url>http://repo.md-5.net/content/groups/public/</url>
+            <id>minecraft</id>
+            <url>http://repo.shortbyte.de/content/repositories/minecraft</url>
         </repository>
     </repositories>
+
     <dependencies>
         <dependency>
-            <groupId>net.md-5</groupId>
-            <artifactId>bungeecord-api</artifactId>
-            <version>1.8-SNAPSHOT</version>
-            <type>jar</type>
-            <scope>provided</scope>
+            <groupId>net.md_5</groupId>
+            <artifactId>bungee</artifactId>
+            <version>1.8</version>
         </dependency>
     </dependencies>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/plugin.yml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/plugin.yml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
 </project>
